@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', href='/css/app.css')
+    title PUTTITLEHERE
+  body
+
+    #banner(style="height:77px;")
+    script.
+      if(window.self==window.top) {
+        var banner = document.getElementById("banner");
+        banner.style.backgroundColor = "black"; 
+        banner.innerHTML = "<a href='http://www.lohud.com'><img src='http://data.lohud.com/lohud%20logos/site-masthead-logo.png' width='300' /></a><br>";
+      }
+    
+    .row
+      .large-12.columns
+        .main-content
+          block content
+
+    .row
+      .footer
+        p Copyright © 2020 Futurecorpz. Futurecorpz ® is a Registered Trademark of Futures (un)Ltd. in the Mars Community and other solar systems.
+
+script(src="bower_components/jquery/dist/jquery.js")
+script(src="bower_components/what-input/what-input.js")
+script(src="bower_components/foundation-sites/dist/foundation.js")
+script(src="js/lohudanalytics.js")
+script(src="js/app.js")

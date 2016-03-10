@@ -1,0 +1,51 @@
+test.jadedoctype html
+html
+  head
+    link(rel='stylesheet', href='/css/app.css')
+    title PUTTITLEHERE
+  body
+    .top-bar
+      .top-bar-title
+        span(data-responsive-toggle="responsive-menu")&attributes({"data-hide-for":"medium"})
+          span.menu-icon.dark(data-toggle)
+        strong Site Title
+
+      #responsive-menu
+        .top-bar-left
+          ul.dropdown.menu(data-dropdown-menu)
+            li
+              a(href='#') One
+              ul.menu.vertical
+                li: a(href="#") One
+                li: a(href="#") Two
+                li: a(href="#") Three
+            li: a(href="#") Two
+            li: a(href="#") Three
+
+        .top-bar-right
+          ul.menu
+            li: input(type="search")&attributes({"placeholder":"search"})
+            li.button: button(type="button")
+
+
+
+
+
+
+
+
+
+    
+    .row
+      .large-12.columns
+        .main-content
+          block content
+
+    .row
+      .footer
+        p Copyright © 2020 Futurecorpz. Futurecorpz ® is a Registered Trademark of Futures (un)Ltd. in the Mars Community and other solar systems.
+
+script(src="bower_components/jquery/dist/jquery.js")
+script(src="bower_components/what-input/what-input.js")
+script(src="bower_components/foundation-sites/dist/foundation.js")
+script(src="js/app.js")
