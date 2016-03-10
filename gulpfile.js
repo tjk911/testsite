@@ -40,7 +40,7 @@ app.get('/', function (req, res, next) {
   }
 })
 
-app.get('var/www/test', function (req, res, next) {
+app.get('/test', function (req, res, next) {
   try {
     var html = template({ title: 'Home' })
     res.send(html)
@@ -49,4 +49,4 @@ app.get('var/www/test', function (req, res, next) {
   }
 })
 
-app.listen(3000)
+app.listen(80, 'localhost')
