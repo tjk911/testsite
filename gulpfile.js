@@ -45,34 +45,14 @@ app.get('/', function (req, res, next) {
   }
 })
 
-// app.get('/var/www/test', function (req, res, next) {
-//   try {
-//     var html = template({ title: 'Home' })
-//     res.send(html)
-//   } catch (e) {
-//     next(e)
-//   }
-// })
-
+app.get('/fake', function (req, res, next) {
+  try {
+    var html = template({ title: 'Fake' })
+    res.send(html)
+  } catch (e) {
+    next(e)
+  }
+})
 
 app.listen(port, "localhost")
 
-// httpProxy.createServer({
-//   target: 'ws://localhost:8000',
-//   ws: true
-// }).listen(8000);
-
-// app.listen(port, function() {
-//   console.log('Listening on port ' + port)
-// })
-
-
-// app.listen('162.221.200.239');
-
-// http.createServer(app).listen(80, '162.221.200.239');
-// https.createServer(app).listen(443, '162.221.200.239');
-
-// app.listen = function() {
-//   var server = http.createServer(this);
-//   return server.listen.apply(server, arguments);
-// };

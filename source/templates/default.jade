@@ -2,7 +2,7 @@ doctype html
 html
   head
     link(rel='stylesheet', href='css/app.css')
-    title PUTTITLEHERE
+    title #{title}
   body
 
     #banner(style="height:77px;")
@@ -14,13 +14,13 @@ html
       }
     
     .row
-      .large-12.columns
+      .large-12.columns(style="padding-top:20px;")
         .main-content
           block content
 
     .row
       .footer
-        p Copyright © 2020 Futurecorpz. Futurecorpz ® is a Registered Trademark of Futures (un)Ltd. in the Mars Community and other solar systems.
+        p Contact Kai Teoh (@jkteoh), jteoh@lohud.com with questions. 
 
 script(src="bower_components/jquery/dist/jquery.js")
 script(src="bower_components/what-input/what-input.js")
