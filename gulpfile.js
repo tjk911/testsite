@@ -23,13 +23,15 @@ gulp.task('default', ['sass'], function() {
 });
 
 
+
+
 var express = require('express')
-  // , https = require('https')
-  // , http = require('http')
   , logger = require('morgan')
   , app = express()
-  , port = process.env.PORT || 8080
+  , port = process.env.PORT || 8000
   , template = require('jade').compileFile(__dirname + '/source/templates/homepage.jade')
+  , http = require('http')
+  , httpProxy = require('http-proxy')
 
 app.use(logger('dev'))
 app.use(express.static(__dirname + '/static'))
@@ -43,17 +45,22 @@ app.get('/', function (req, res, next) {
   }
 })
 
-app.get('/var/www/test', function (req, res, next) {
-  try {
-    var html = template({ title: 'Home' })
-    res.send(html)
-  } catch (e) {
-    next(e)
-  }
-})
+// app.get('/var/www/test', function (req, res, next) {
+//   try {
+//     var html = template({ title: 'Home' })
+//     res.send(html)
+//   } catch (e) {
+//     next(e)
+//   }
+// })
 
 
 app.listen(port, "localhost")
+
+httpProxy.createServer({
+  target: 'ws://localhost:8000',
+  ws: true
+}).listen(8014);
 
 // app.listen(port, function() {
 //   console.log('Listening on port ' + port)
