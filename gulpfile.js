@@ -57,10 +57,10 @@ app.get('/', function (req, res, next) {
 
 app.listen(port, "localhost")
 
-httpProxy.createServer({
-  target: 'ws://localhost:8000',
-  ws: true
-}).listen(8014);
+// httpProxy.createServer({
+//   target: 'ws://localhost:8000',
+//   ws: true
+// }).listen(8000);
 
 // app.listen(port, function() {
 //   console.log('Listening on port ' + port)
