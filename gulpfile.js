@@ -32,9 +32,13 @@ var express = require('express')
   , template = require('jade').compileFile(__dirname + '/source/templates/homepage.jade')
   , http = require('http')
   , httpProxy = require('http-proxy')
+  , bodyParser = require('body-parser')
 
 app.use(logger('dev'))
 app.use(express.static(__dirname + '/static'))
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function (req, res, next) {
   try {
@@ -52,6 +56,10 @@ app.get('/fake', function (req, res, next) {
   } catch (e) {
     next(e)
   }
+})
+
+app.post('/', function(req, res){
+  console.log(JSON.stringify(req.body));
 })
 
 app.listen(port, "localhost")

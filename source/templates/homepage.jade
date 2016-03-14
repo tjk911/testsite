@@ -1,11 +1,52 @@
 extend default
 
 block content
-  h4(style="margin-bottom:10px") Restaurant name
-    label
-        textarea#the-turnaround(placeholder="Placeholder text here")&attributes({"required":"required"})
-        span(style="padding-left:10px") Total word count: 
-            span#display_count_turnaround(style="font-size:16px; color:black;") 0
-            |  words & 
-            span#count_left_turnaround(style="font-size:16px;color:red;") 125
-            |  words left.
+    .row
+        form(action="/", method="post")
+            .large-12.columns(style="padding-top:20px;")
+                label Restaurant name
+                    input#name(placeholder="Restaurant name", required="required", name="name", type="text")
+            .large-12.columns
+                label Restaurant description
+                    textarea#description(placeholder="Restaurant description", required="required", name="description")
+                    span(style="padding-left:10px") Total word count: 
+                        span#display_count_turnaround(style="font-size:16px; color:black;") 0
+                        |  words & 
+                        span#count_left_turnaround(style="font-size:16px;color:red;") 125
+                        |  words left.
+            .large-12.columns
+                .large-3.columns
+                    label Restaurant address
+                        input#address(placeholder="Address", name="address", type="text")
+                .large-3.columns
+                    label Restaurant tel
+                        input#phone(placeholder="Tel#", name="phone", type="text")
+                .large-3.columns
+                    label Restaurant website
+                        input#website(placeholder="Website", name="website", type="text")
+                .large-3.columns
+                    .large-6.columns
+                        label Lat
+                            input#lat(placeholder="Lat", name="lat", type="text")
+                    .large-6.columns
+                        label Long
+                            input#long(placeholder="Long", name="long", type="text")
+            //- .large-12.columns(style="padding-top:20px;")
+            //-   h4(style="margin-bottom:10px") Restaurant name
+            //-     label
+            //-         textarea#the-turnaround(placeholder="Placeholder text here")
+            //-         span(style="padding-left:10px") Total word count: 
+            //-             span#display_count_turnaround(style="font-size:16px; color:black;") 0
+            //-             |  words & 
+            //-             span#count_left_turnaround(style="font-size:16px;color:red;") 125
+            //-             |  words left.
+            //- .large-12.columns(style="padding-top:20px;")
+            //-   h4(style="margin-bottom:10px") Restaurant name
+            //-     label
+            //-         textarea#the-turnaround(placeholder="Placeholder text here")
+            //-         span(style="padding-left:10px") Total word count: 
+            //-             span#display_count_turnaround(style="font-size:16px; color:black;") 0
+            //-             |  words & 
+            //-             span#count_left_turnaround(style="font-size:16px;color:red;") 125
+            //-             |  words left.
+            button(type="submit").button Submit
