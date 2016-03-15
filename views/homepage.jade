@@ -1,4 +1,4 @@
-extend default
+extend index
 
 block content
     .row(style="padding-top:20px;")
@@ -10,19 +10,9 @@ block content
                 .large-12.columns
                     label Restaurant description
                         textarea#description(placeholder="Restaurant description", required="required", name="description", style="height:250px;")
-                        span(style="padding-left:10px") Total word count: 
-                            span#display_count_turnaround(style="font-size:16px; color:black;") 0
-                            |  words & 
-                            span#count_left_turnaround(style="font-size:16px;color:red;") 125
-                            |  words left.
                 .large-12.columns
                     label How much of a detour?
                         textarea#detour(placeholder="About 525,600 minutes", required="required", name="detour", style="height:150px;")
-                        span(style="padding-left:10px") Total word count: 
-                            span#display_count_turnaround(style="font-size:16px; color:black;") 0
-                            |  words & 
-                            span#count_left_turnaround(style="font-size:16px;color:red;") 125
-                            |  words left.
                 .large-12.columns
                     .large-12.columns
                         label Restaurant address
@@ -40,10 +30,10 @@ block content
                         label Long
                             input#long(placeholder="Long", name="long", type="text")
                 .button-group
-                    button(type="submit").button Preview
+                    button.button.disabled Preview
                     button(type="submit").button.success Submit
-        .large-6.columns.callout.primary
-            h4 Preview
+        .large-6.columns.callout.secondary
+            h4 <s>Preview</s>
             .large-12.columns(style="height:100vh")
             //- .large-12.columns(style="padding-top:20px;")
             //-   h4(style="margin-bottom:10px") Restaurant name

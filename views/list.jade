@@ -1,0 +1,36 @@
+extend index
+
+block content
+    .row(style="padding-top:20px;")
+        .large-12.columns
+            #container
+                each value, key in json
+                    .large-6.columns
+                        .callout.primary 
+                            each item, index in value
+                                if index == 'name'
+                                    - var name = item
+                                    h2.presto-h2 #{name}
+                                else if index == 'description'
+                                    - var description = item
+                                    p #{description}
+                                else if index == 'detour'
+                                    - var detour = item
+                                    p <strong>How much of a detour:</strong> #{detour}
+                                else if index == 'address'
+                                    - var address = item
+                                else if index == 'phone'
+                                    - var phone = item
+                                else if index == 'website'
+                                    - var website = item
+                                    p <strong>Go:</strong> #{address}, #{phone}, #{website}
+                    //- .large-6.columns Raw
+    //- script(type="text/javascript").
+    //-     var obj = !{JSON.stringify(json)};
+    //-     console.log(obj);
+    //-     for(var i = 0; i < obj.length; i++){
+    //-         var createDiv = document.createElement("div");
+    //-         createDiv.innerHTML = 
+    //-         "<p>"+obj[i]['name']+"</p>"
+    //-         document.getElementById("container").appendChild(createDiv);
+    //-     }

@@ -26,14 +26,12 @@ var express = require('express')
   , logger = require('morgan')
   , app = express()
   , port = process.env.PORT || 8000
-  , template = require('jade').compileFile(__dirname + '/source/templates/homepage.jade')
+  // , template = require('jade').compileFile(__dirname + '/source/templates/homepage.jade')
   // , http = require('http')
   // , httpProxy = require('http-proxy')
   , bodyParser = require('body-parser')
   , fs = require("fs")
   , obj = require('./file.json')
-  // , stringify = JSON.stringify(obj)
-
 
 
 app.use(logger('dev'))
@@ -48,22 +46,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function (req, res, next) {
   try {
-    var html = template({ title: 'Home' })
-    res.send(html)
+    res.render('homepage', { title : 'Home' });
   } catch (e) {
     next(e)
   }
-
-  console.log(obj);
-  console.log(stringify);
 })
 
-app.get('/fake', function (req, res, next) {
+app.get('/list', function (req, res, next) {
   try {
-    // var html = template({ title: 'Fake' })
-    // res.send(html)
-    // var parsed = JSON.stringify(obj)
-    res.render('fake', { title : 'Fake', json: obj });
+    res.render('list', { title : 'Restaurant list', json: obj });
   } catch (e) {
     next(e)
   }
@@ -79,8 +70,6 @@ app.post('/', function(req, res){
   // fs.appendFile( "file.json", JSON.stringify( myJson ), "utf8" );
 })
 
-
-// myJson = require("./file.json");
 
 
 app.listen(port, "localhost")
