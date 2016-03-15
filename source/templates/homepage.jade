@@ -1,36 +1,50 @@
 extend default
 
 block content
-    .row
-        form(action="/", method="post")
-            .large-12.columns(style="padding-top:20px;")
-                label Restaurant name
-                    input#name(placeholder="Restaurant name", required="required", name="name", type="text")
-            .large-12.columns
-                label Restaurant description
-                    textarea#description(placeholder="Restaurant description", required="required", name="description")
-                    span(style="padding-left:10px") Total word count: 
-                        span#display_count_turnaround(style="font-size:16px; color:black;") 0
-                        |  words & 
-                        span#count_left_turnaround(style="font-size:16px;color:red;") 125
-                        |  words left.
-            .large-12.columns
-                .large-3.columns
-                    label Restaurant address
-                        input#address(placeholder="Address", name="address", type="text")
-                .large-3.columns
-                    label Restaurant tel
-                        input#phone(placeholder="Tel#", name="phone", type="text")
-                .large-3.columns
-                    label Restaurant website
-                        input#website(placeholder="Website", name="website", type="text")
-                .large-3.columns
+    .row(style="padding-top:20px;")
+        .large-6.columns
+            form(action="/", method="post")
+                .large-12.columns
+                    label Restaurant name
+                        input#name(placeholder="Restaurant name", required="required", name="name", type="text")
+                .large-12.columns
+                    label Restaurant description
+                        textarea#description(placeholder="Restaurant description", required="required", name="description", style="height:250px;")
+                        span(style="padding-left:10px") Total word count: 
+                            span#display_count_turnaround(style="font-size:16px; color:black;") 0
+                            |  words & 
+                            span#count_left_turnaround(style="font-size:16px;color:red;") 125
+                            |  words left.
+                .large-12.columns
+                    label How much of a detour?
+                        textarea#detour(placeholder="About 525,600 minutes", required="required", name="detour", style="height:150px;")
+                        span(style="padding-left:10px") Total word count: 
+                            span#display_count_turnaround(style="font-size:16px; color:black;") 0
+                            |  words & 
+                            span#count_left_turnaround(style="font-size:16px;color:red;") 125
+                            |  words left.
+                .large-12.columns
+                    .large-12.columns
+                        label Restaurant address
+                            input#address(placeholder="Address", name="address", type="text")
+                    .large-6.columns
+                        label Restaurant tel
+                            input#phone(placeholder="Tel#", name="phone", type="text")
+                    .large-6.columns
+                        label Restaurant website
+                            input#website(placeholder="Website", name="website", type="text")
                     .large-6.columns
                         label Lat
                             input#lat(placeholder="Lat", name="lat", type="text")
                     .large-6.columns
                         label Long
                             input#long(placeholder="Long", name="long", type="text")
+                .button-group
+                    button(type="submit").button Preview
+                    button(type="submit").button.success Submit
+        .large-6.columns.callout.primary
+            h4 Preview
+            .large-12.columns(style="height:100vh")
             //- .large-12.columns(style="padding-top:20px;")
             //-   h4(style="margin-bottom:10px") Restaurant name
             //-     label
@@ -49,4 +63,3 @@ block content
             //-             |  words & 
             //-             span#count_left_turnaround(style="font-size:16px;color:red;") 125
             //-             |  words left.
-            button(type="submit").button Submit

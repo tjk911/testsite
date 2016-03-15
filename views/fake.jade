@@ -1,0 +1,16 @@
+extend index
+
+block content
+    #container
+        each value, key in json
+            each item, index in value
+                p= index + ": " + item
+    //- script(type="text/javascript").
+    //-     var obj = !{JSON.stringify(json)};
+    //-     console.log(obj);
+    //-     for(var i = 0; i < obj.length; i++){
+    //-         var createDiv = document.createElement("div");
+    //-         createDiv.innerHTML = 
+    //-         "<p>"+obj[i]['name']+"</p>"
+    //-         document.getElementById("container").appendChild(createDiv);
+    //-     }
