@@ -3,7 +3,7 @@ extend index
 block content
     .row(style="padding-top:20px;")
         .large-6.columns
-            form(action="/", method="post")
+            form(action="", method="post")#form
                 .large-12.columns
                     label Restaurant name
                         input#name(placeholder="Restaurant name", required="required", name="name", type="text")
@@ -14,6 +14,9 @@ block content
                     label How much of a detour?
                         textarea#detour(placeholder="About 525,600 minutes", required="required", name="detour", style="height:150px;")
                 .large-12.columns
+                    .large-12.columns
+                        label Google Maps URL
+                            input#map(placeholder="Map URL", name="map", type="text")
                     .large-12.columns
                         label Restaurant address
                             input#address(placeholder="Address", name="address", type="text")

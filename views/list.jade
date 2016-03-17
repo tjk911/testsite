@@ -10,20 +10,28 @@ block content
                             each item, index in value
                                 if index == 'name'
                                     - var name = item
-                                    h2.presto-h2 #{name}
+                                else if index == 'map'
+                                    - var map = item
                                 else if index == 'description'
                                     - var description = item
-                                    p #{description}
                                 else if index == 'detour'
                                     - var detour = item
-                                    p <strong>How much of a detour:</strong> #{detour}
                                 else if index == 'address'
                                     - var address = item
                                 else if index == 'phone'
-                                    - var phone = item
+                                    - var phone = item.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
                                 else if index == 'website'
                                     - var website = item
-                                    p <strong>Go:</strong> #{address}, #{phone}, #{website}
+                                    h2.presto-h2 #{name}
+                                    p
+                                        a(href='#{map}', target="_blank") (Open location in browser)
+                                    !{description}
+                                    p <strong>How much of a detour:</strong> #{detour}
+                                    p 
+                                        <strong>Go:</strong> 
+                                        a(href='#{map}', target="_blank") #{address}
+                                        , #{phone}, 
+                                        a(href='#{website}', target="_blank") #{website}
                     //- .large-6.columns Raw
     //- script(type="text/javascript").
     //-     var obj = !{JSON.stringify(json)};

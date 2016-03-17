@@ -61,13 +61,13 @@ app.get('/list', function (req, res, next) {
 })
 
 app.post('/', function(req, res){
-  // var myJson = JSON.stringify(req.body);
+  console.log(req.body);
   obj.push(req.body);
   var newJSON = JSON.stringify(obj);
-  fs.writeFile('file.json', newJSON, function (err) {
+  fs.writeFile('./file.json', newJSON, function (err) {
     console.log(err);
   });
-  // fs.appendFile( "file.json", JSON.stringify( myJson ), "utf8" );
+  res.render('homepage', { title : 'Home' });
 })
 
 
