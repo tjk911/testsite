@@ -2,10 +2,9 @@ doctype html
 html
   head
     link(rel='stylesheet', href='css/app.css')
-    link(rel='stylesheet', href='css/custom.css')
     title #{title}
 
-  body
+  body(ng-app="restaurantdb" ng-controller="dbresults")
 
     #banner(style="height:77px;")
     script.
@@ -22,6 +21,7 @@ html
       .footer
         p Contact Kai Teoh (@jkteoh), jteoh@lohud.com with questions. 
 
+script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js")
 script(src="bower_components/jquery/dist/jquery.js")
 script(src="bower_components/what-input/what-input.js")
 script(src="bower_components/foundation-sites/dist/foundation.js")
@@ -30,3 +30,4 @@ script(src="js/additional-methods.min.js")
 script(src="//cdn.tinymce.com/4/tinymce.min.js")
 script(src="js/lohudanalytics.js")
 script(src="js/app.js")
+script(src="js/controller.js")

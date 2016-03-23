@@ -15,16 +15,29 @@ block content
                         textarea#detour(placeholder="About 525,600 minutes", required="required", name="detour", style="height:150px;")
                 .large-12.columns
                     .large-12.columns
+                        label Street
+                            input#address(placeholder="Address", name="address", type="text")
+                    .large-4.columns
+                        label City/Town/Village
+                            input#city(placeholder="City/Town/Village", name="city", type="text")
+                    .large-4.columns
+                        label State
+                            input#state(placeholder="State", name="state", type="text")
+                    .large-4.columns
+                        label Zip
+                            input#zip(placeholder="Zip", name="zip", type="text")
+                .large-12.columns
+                    .large-8.columns
                         label Google Maps URL
                             input#map(placeholder="Map URL", name="map", type="text")
-                    .large-12.columns
-                        label Restaurant address
-                            input#address(placeholder="Address", name="address", type="text")
+                    .large-4.columns
+                        label Presto photo asset ID
+                            input#photo(placeholder="83567712", name="photo", type="text")
                     .large-6.columns
-                        label Restaurant tel
+                        label Telephone
                             input#phone(placeholder="Tel#", name="phone", type="text")
                     .large-6.columns
-                        label Restaurant website
+                        label Website
                             input#website(placeholder="Website", name="website", type="text")
                     .large-6.columns
                         label Lat
@@ -33,26 +46,12 @@ block content
                         label Long
                             input#long(placeholder="Long", name="long", type="text")
                 .button-group
-                    button.button.disabled Preview
+                    button.button#preview Preview
                     button(type="submit").button.success Submit
-        .large-6.columns.callout.secondary
-            h4 <s>Preview</s>
+        .large-6.columns.callout.secondary#display_preview
+            h4 Preview
+            //- img(src="img/movealong.gif")/
+            p  View actual listings 
+                a(href="list") here
+                | .
             .large-12.columns(style="height:100vh")
-            //- .large-12.columns(style="padding-top:20px;")
-            //-   h4(style="margin-bottom:10px") Restaurant name
-            //-     label
-            //-         textarea#the-turnaround(placeholder="Placeholder text here")
-            //-         span(style="padding-left:10px") Total word count: 
-            //-             span#display_count_turnaround(style="font-size:16px; color:black;") 0
-            //-             |  words & 
-            //-             span#count_left_turnaround(style="font-size:16px;color:red;") 125
-            //-             |  words left.
-            //- .large-12.columns(style="padding-top:20px;")
-            //-   h4(style="margin-bottom:10px") Restaurant name
-            //-     label
-            //-         textarea#the-turnaround(placeholder="Placeholder text here")
-            //-         span(style="padding-left:10px") Total word count: 
-            //-             span#display_count_turnaround(style="font-size:16px; color:black;") 0
-            //-             |  words & 
-            //-             span#count_left_turnaround(style="font-size:16px;color:red;") 125
-            //-             |  words left.

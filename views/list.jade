@@ -18,10 +18,21 @@ block content
                                     - var detour = item
                                 else if index == 'address'
                                     - var address = item
+                                else if index == 'city'
+                                    - var city = item
+                                else if index == 'state'
+                                    - var state = item
+                                else if index == 'zip'
+                                    - var zip = item
+                                else if index == 'photo'
+                                    - var photo = item
                                 else if index == 'phone'
-                                    - var phone = item.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
+                                    - var phone = item.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
                                 else if index == 'website'
                                     - var website = item
+                                    - var removeWWW = website.replace("www.","")
+                                    - var SSLprotected = removeWWW.replace("https://","")
+                                    - var sitename = SSLprotected.replace("http://","")
                                     h2.presto-h2 #{name}
                                     p
                                         a(href='#{map}', target="_blank") (Open location in browser)
@@ -29,16 +40,7 @@ block content
                                     p <strong>How much of a detour:</strong> #{detour}
                                     p 
                                         <strong>Go:</strong> 
-                                        a(href='#{map}', target="_blank") #{address}
-                                        , #{phone}, 
-                                        a(href='#{website}', target="_blank") #{website}
-                    //- .large-6.columns Raw
-    //- script(type="text/javascript").
-    //-     var obj = !{JSON.stringify(json)};
-    //-     console.log(obj);
-    //-     for(var i = 0; i < obj.length; i++){
-    //-         var createDiv = document.createElement("div");
-    //-         createDiv.innerHTML = 
-    //-         "<p>"+obj[i]['name']+"</p>"
-    //-         document.getElementById("container").appendChild(createDiv);
-    //-     }
+                                        a(href='#{map}', target="_blank") #{address}, #{city}, #{state} #{zip}
+                                        , #{phone},   
+                                        a(href='#{website}', target="_blank") #{sitename}
+                                    p Presto photo ID: #{photo}

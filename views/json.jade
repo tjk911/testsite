@@ -1,0 +1,11 @@
+extend index
+
+block content
+    .row(style="padding-top:20px;max-width:80vw;")
+        //- .large-12.columns
+            //- .div(ng-repeat="restaurant in restaurantdata")
+                //- {{restaurant.name}}
+        table
+            thead
+                tr(ng-repeat="(key, value) in restaurantdata")
+                    th(ng-repeat="(k, v) in value") {{k}}
